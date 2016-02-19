@@ -26,7 +26,7 @@ setup(
 
     description='Handy dandy functions for python development using the Serverless framework',
     long_description=long_description,
-    url='https://github.com/ryansb/serverless-helpers',
+    url='https://github.com/serverless/serverless-helpers-py',
     author='Ryan Scott Brown',
     author_email='sb@ryansb.com',
     license='MIT',
