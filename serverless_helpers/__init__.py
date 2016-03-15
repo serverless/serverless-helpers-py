@@ -16,6 +16,7 @@ def load_envs(path):
     foo/bar/.env will take precedence over values from foo/.env
     """
     import os
+    path = os.path.abspath(path)
     path, _ = os.path.split(path)
     if path == '/':
         # bail out when you reach top of the FS
