@@ -111,6 +111,8 @@ def load_dotenv(dotenv_path):
         warnings.warn("Not loading %s - it doesn't exist." % dotenv_path)
         return None
     for k, v in parse_dotenv(dotenv_path):
+        if k in os.environ:
+            os.environ.pop(k)
         os.environ.setdefault(k, v)
     return True
 
