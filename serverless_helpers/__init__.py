@@ -4,6 +4,17 @@
 from dotenv import load_dotenv, get_key, set_key, unset_key
 
 def load_envs(path):
+    """Recursively load .env files starting from `path`
+
+    Given the path "foo/bar/.env" and a directory structure like:
+        foo
+        \---.env
+        \---bar
+            \---.env
+
+    Values from foo/bar/.env and foo/.env will both be loaded, but values in
+    foo/bar/.env will take precedence over values from foo/.env
+    """
     import os
     path, _ = os.path.split(path)
     if path == '/':
