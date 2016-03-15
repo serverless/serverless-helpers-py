@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # MIT Licensed, Copyright (c) 2016 Ryan Scott Brown <sb@ryansb.com>
 
+import os
 import mock
 import serverless_helpers
 
@@ -19,7 +20,6 @@ def test_load(tmpdir):
 
     assert success # is True when load succeeds
 
-    import os
     assert int(os.getenv('SERVERLESS_TEST')) == 1
     assert os.getenv('SERVERLESS_STAGE') == 'dev'
     assert os.getenv('SERVERLESS_PROJECT_NAME') == 'test-sls-helpers'
@@ -32,11 +32,25 @@ def test_single_key(tmpdir):
     env_file = write_testenv(tmpdir.join('.env'))
     data_stage = serverless_helpers.get_key(env_file, 'SERVERLESS_DATA_MODEL_STAGE')
     assert data_stage == 'dev'
+def test_unset_key(tmpdir):
+    env_file = write_testenv(tmpdir.join('.env'))
+    stage = serverless_helpers.get_key(env_file, 'SERVERLESS_STAGE')
+    assert stage == 'dev'
+    success, _ = serverless_helpers.unset_key(env_file, 'SERVERLESS_STAGE')
+    assert success
+    stage = serverless_helpers.get_key(env_file, 'SERVERLESS_STAGE')
+    assert stage is None
 
 def test_read_nonexistent(tmpdir):
     env_file = write_testenv(tmpdir.join('.env'))
     data_stage = serverless_helpers.get_key(env_file + 'fooooo', 'SERVERLESS_DATA_MODEL_STAGE')
     assert data_stage is None
+
+def test_write_nonexistent(tmpdir):
+    env_file = write_testenv(tmpdir.join('.env'))
+    success, key, val = serverless_helpers.set_key(env_file + 'fooooo', 'WRITE', 'nope')
+    assert success is None
+    assert key == 'WRITE'
 
 def test_get_nonexistent(tmpdir):
     env_file = write_testenv(tmpdir.join('.env'))
@@ -72,7 +86,6 @@ def test_more_specific_dirs_override(tmpdir):
     base = tmpdir.join('.env')
     base.write('OVERRIDE_ME=dev\nCONST=foo')
 
-    import os
     serverless_helpers.load_envs(os.path.join(str(tmpdir), 'file.py'))
     assert os.getenv('OVERRIDE_ME') == 'dev'
     assert os.getenv('CONST') == 'foo'
