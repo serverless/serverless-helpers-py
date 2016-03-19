@@ -1,0 +1,60 @@
+{
+    "status_code": 200,
+    "data": {
+        "Stacks": [
+            {
+                "StackId": "arn:aws:cloudformation:us-east-1:123456789012:stack/fooproj-dev-r/6434c570-ec35-11e5-88f9-500c28afa0ba",
+                "Description": "The AWS CloudFormation template for this Serverless application's resources outside of Lambdas and Api Gateway",
+                "Tags": [
+                    {
+                        "Value": "dev",
+                        "Key": "STAGE"
+                    }
+                ],
+                "Outputs": [
+                    {
+                        "Description": "Name of DDB table",
+                        "OutputKey": "DynamoTable",
+                        "OutputValue": "fooproj-dev-r-DynamoTable-10BOBXVSYCSEZ"
+                    },
+                    {
+                        "Description": "ARN of the lambda IAM role",
+                        "OutputKey": "IamRoleArnLambda",
+                        "OutputValue": "arn:aws:iam::123456789012:role/fooproj-dev-r-IamRoleLambda-1FXF6RB60LLUT"
+                    }
+                ],
+                "CreationTime": {
+                    "hour": 11,
+                    "__class__": "datetime",
+                    "month": 3,
+                    "second": 56,
+                    "microsecond": 428000,
+                    "year": 2016,
+                    "day": 17,
+                    "minute": 42
+                },
+                "Capabilities": [
+                    "CAPABILITY_IAM"
+                ],
+                "StackName": "fooproj-dev-r",
+                "NotificationARNs": [],
+                "StackStatus": "UPDATE_COMPLETE",
+                "DisableRollback": false,
+                "LastUpdatedTime": {
+                    "hour": 23,
+                    "__class__": "datetime",
+                    "month": 3,
+                    "second": 37,
+                    "microsecond": 438000,
+                    "year": 2016,
+                    "day": 18,
+                    "minute": 44
+                }
+            }
+        ],
+        "ResponseMetadata": {
+            "HTTPStatusCode": 200,
+            "RequestId": "16648e45-edcf-11e5-a790-ab812dd680fc"
+        }
+    }
+}
