@@ -51,10 +51,6 @@ def load_cfn_outputs(boto3_session=None):
     else:
         logger.debug('Retrieved stack %s from CFN API' % stack_name())
 
-    if not len(stacks['Stacks']):
-        # no stacks, nuts
-        return {}
-
     outputs = stacks['Stacks'][0]['Outputs']
     reformatted = {
         o['OutputKey']: {
