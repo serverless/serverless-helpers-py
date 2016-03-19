@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 # MIT Licensed, Copyright (c) 2016 Ryan Scott Brown <sb@ryansb.com>
 
-from dotenv import load_dotenv, get_key, set_key, unset_key
+import os
+import logging
+logger = logging.getLogger()
 
+from dotenv import load_dotenv, get_key, set_key, unset_key
 from cfn_detect import load_cfn_outputs
 
 def load_envs(path):
