@@ -3,6 +3,8 @@
 
 from dotenv import load_dotenv, get_key, set_key, unset_key
 
+from cfn_detect import load_cfn_outputs
+
 def load_envs(path):
     """Recursively load .env files starting from `path`
 
