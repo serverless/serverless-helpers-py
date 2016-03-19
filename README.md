@@ -8,11 +8,22 @@ you.
 
 ```
 import serverless_helpers
+
+# all .env files are loaded into the environment
 serverless_helpers.load_envs(__file__)
-# now all .env files are loaded into the environment
+
+# Loads stack outputs into environment variables as `SERVERLESS_CF_[output name]`
+serverless_helpers.load_cfn_outputs()
 
 import os
 os.getenv('SERVERLESS_STAGE') # dev
+
+# get role ARN from default serverless CloudFormation stack
+os.getenv('SERVERLESS_CF_IamRoleArnLambda') # arn:aws:iam::123456789012:....
+
+# alternate way to read roles
+outputs = serverless_helpers.load_cfn_outputs()
+outputs['IamRoleArnLambda'] # arn:aws:iam::123456789012:....
 ```
 
 ## License
