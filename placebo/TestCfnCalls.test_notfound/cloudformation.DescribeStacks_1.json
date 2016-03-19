@@ -1,13 +1,13 @@
 {
-    "status_code": 400, 
+    "status_code": 400,
     "data": {
         "ResponseMetadata": {
-            "HTTPStatusCode": 400, 
+            "HTTPStatusCode": 400,
             "RequestId": "1614c05f-edcf-11e5-b368-ed79f32fee88"
-        }, 
+        },
         "Error": {
-            "Message": "Stack with id nonexistent-dev-r does not exist", 
-            "Code": "ValidationError", 
+            "Message": "Stack with id nonexistent-dev-r does not exist",
+            "Code": "ValidationError",
             "Type": "Sender"
         }
     }
