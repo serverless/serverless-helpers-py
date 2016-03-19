@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 # MIT Licensed, Copyright (c) 2016 Ryan Scott Brown <sb@ryansb.com>
 
+import os
+import logging
+logger = logging.getLogger()
+
 from dotenv import load_dotenv, get_key, set_key, unset_key
 
 def load_envs(path):
@@ -22,7 +26,6 @@ def load_envs(path):
     Values from foo/bar/.env and foo/.env will both be loaded, but values in
     foo/bar/.env will take precedence over values from foo/.env
     """
-    import os
     path = os.path.abspath(path)
     path, _ = os.path.split(path)
     if path == '/':
