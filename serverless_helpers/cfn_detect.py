@@ -18,6 +18,7 @@ def stack_name():
             'environment. This probably means the .env file was not loaded. '
             'Make sure you call `serverless_helpers.load_envs(__file__)` '
             'first.')
+        return ''
 
     return u'%s-%s-r' % (
         os.getenv('SERVERLESS_PROJECT_NAME'),
