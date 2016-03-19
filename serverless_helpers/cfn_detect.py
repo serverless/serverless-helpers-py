@@ -4,7 +4,6 @@
 import os
 import logging
 import boto3
-import boto3.exceptions as boto_exc
 import botocore.exceptions as core_exc
 
 logger = logging.getLogger()
