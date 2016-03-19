@@ -13,7 +13,7 @@ from os import path
 
 here = path.abspath(path.dirname(__file__))
 
-test_deps = ['mock', 'pytest', 'pytest-cov', 'pytest-xdist']
+test_deps = ['mock', 'pytest', 'pytest-cov', 'pytest-xdist', 'placebo', 'boto3']
 
 # Get the long description from the README file
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
@@ -50,7 +50,8 @@ setup(
     # What does your project relate to?
     keywords='serverless lambda aws amazon',
 
-    py_modules=["serverless_helpers"],
+    py_modules=['serverless_helpers'],
+    packages=['serverless_helpers'],
 
     # List run-time dependencies here.  These will be installed by pip when
     # your project is installed. For an analysis of "install_requires" vs pip's
