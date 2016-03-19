@@ -22,7 +22,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 setup(
     name='serverless_helpers',
 
-    version='0.3.0',
+    version='0.3.1',
 
     description='Handy dandy functions for python development using the Serverless framework',
     long_description=long_description,
