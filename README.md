@@ -1,5 +1,5 @@
 ## serverless_helpers
-[![serverless](http://public.serverless.com/badges/v1.svg)](http://www.serverless.com)
+[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 
 This library isn't *required* for writing Python in the [serverless][sls], but
 it does make your life easier by handling things like environment variables for
