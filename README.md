@@ -11,6 +11,8 @@ you.
 import serverless_helpers
 
 # all .env files are loaded into the environment
+# This is optional if you are using serverless v0.5 or later, because it
+# automatically loads variables without help
 serverless_helpers.load_envs(__file__)
 
 # Loads stack outputs into environment variables as `SERVERLESS_CF_[output name]`
