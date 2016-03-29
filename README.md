@@ -1,5 +1,11 @@
 ## serverless_helpers
+
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
+[![test status](https://api.travis-ci.org/serverless/serverless-helpers-py.svg)](https://travis-ci.org/serverless/serverless-helpers-py)
+[![version](https://img.shields.io/pypi/v/serverless_helpers.svg)](https://pypi.python.org/pypi/serverless_helpers/)
+[![downloads](https://img.shields.io/pypi/dm/serverless_helpers.svg)](https://pypi.python.org/pypi/serverless_helpers/)
+[![license](https://img.shields.io/pypi/l/serverless_helpers.svg)](https://github.com/serverless/serverless-helpers-py/blob/master/LICENSE)
+[![gitter](https://img.shields.io/gitter/room/serverless/serverless.svg)](https://gitter.im/serverless/serverless)
 
 This library isn't *required* for writing Python in the [serverless][sls], but
 it does make your life easier by handling things like environment variables for
